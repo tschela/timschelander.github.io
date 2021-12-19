@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<!--Tim Schelander-->
+<header>   
+    <div id="header">
+        <header role="banner">
+            <nav id="navigation" role="navigation">
+          <ul>
+            <li>
+                <a href="C:\Users\Tim\javascript\INDEX.html">INDEX</a>
+            </li>
+            <li>
+                <a href="C:\Users\Tim\javascript\countdown audio.html">Rocket Countdown</a>
+            </li>
+          <li>
+            <a href="C:\Users\Tim\javascript\boards.html">Major Objectives</a>
+        </li>
+            <li>
+                <a href="mailto:TIMSCHEL@UAT.EDU">Contact</a>
+            </li>
+            <li>
+              <a href="https://www.uat.edu/">UAT HOMEPAGE</a>
+          </li>
+          </ul>
+        </nav>
+      </header>
+      </div>
+      <h2 style="font-size: 200%;" ;>
+        UAT MISSION CONTROL
+        <img align="right" src="C:\Users\Tim\Documents\programming\UATspaceLogo.jpg"
+    </h2>
+<head>
+    <style>
+        body {
+            background-image: url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAQQskg.img?h=864&w=1438&m=6&q=60&o=f&l=f');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+    </style>
+<style>
+     #header {
+    background-color:linear-gradient(90deg, white, #2eacd4);
+    padding: 5px 0;
+}
+header {
+    background-color: linear-gradient(90deg, white, #2eacd4);
+}
+header nav {
+    border: 1px solid red;
+}
+header nav ul {
+    margin: 0;
+    padding: 0;
+}
+header nav li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+header nav li img {
+    vertical-align: middle;
+    border: 1px solid blue;
+}
+header nav li a {
+    vertical-align: middle;
+    font-size: 1.5em;
+    text-decoration: none;
+    background-color: linear-gradient(90deg, white, #2eacd4);
+    color: black;
+    padding: 10px;
+    margin: 0 0 0 10px;
+}
+
+.topSeparate {
+    margin-top: 2.00em;
+}
+.autoSize {
+    width: inherit;
+}
+.autoSize img {
+    width: 25%;
+}
+</style>
+
+</head>
+<p style=font:medium>
+
+    <body>
+
+        First name:<br>
+        <input type="text" name="firstname" id='firstname'>
+        <br> Last name:<br>
+        <input type="text" name="lastname" id='lastname'>
+        <input type="button" value="Submit" onclick="myFunction()">
+        <br>
+        <br>
+        <br>
+        <div id="here"></div>
+        <br>
+        <br>
+
+        <script>
+function myFunction() {
+    // First Name of the user
+    var firstname = document.getElementById("firstname").value;
+    // Last Name of the user
+    var lastname = document.getElementById("lastname").value;
+    // users full name
+    var fullName = firstname + " " + lastname;
+    //loop for number of characters
+    document.getElementById("here").innerHTML = fullName;
+    if (fullName.length > 20) {
+        // alert name too long
+        alert("Invalid name. Full name must be less than 20 letters");
+    } else {
+        // prompt for badge number
+        var badgeNumber = prompt("Enter a three digit badge number", 3);
+
+        //loop for badge number
+        if (badgeNumber.length > 3) {
+            //alert for invalid number of digits
+            alert("Invalid entry. Badge number must be three digits");
+        } else {
+            //enter program site
+            window.location.href = "file:///C:/Users/Tim/javascript/UAT%20Space%20Program.html";
+        }
+    }
+}
+        </script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 second countdown</title>
+    
+</head>
+
+<div id="header">
+  <header role="banner">
+      <nav id="navigation" role="navigation">
+    <ul>
+      <li>
+          <a href="C:\Users\Tim\javascript\INDEX.html">INDEX</a>
+      </li>
+      <li>
+        <a href="C:\Users\Tim\javascript\boards.html">Major Objectives</a>
+    </li>
+      <li>
+        <a href="C:\Users\Tim\javascript\MISSION CONTROL.html">Space Program</a>
+    </li>
+      <li>
+          <a href="mailto:TIMSCHEL@UAT.EDU">Contact</a>
+      </li>
+      <li>
+        <a href="https://www.uat.edu/">UAT HOMEPAGE</a>
+    </li>
+    </ul>
+  </nav>
+</header>
+</div>
+
+<style>
+ @font-face {
+    font-family: 'galaxy_girlregular';
+    src: url('galaxygirl-2oo0k-webfont.woff2') format('woff2'),
+         url('galaxygirl-2oo0k-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+    h1{
+        font-family: 'galaxy_girlregular';
+        font-size: 15em;
+        color: green;
+    }
+
+    .container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    body {
+  background-image: url(https://www.ibtimes.com/sites/www.ibtimes.com/files/styles/embed/public/2018/02/14/challenger-launch.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+
+li a {
+    display: block;
+    font-size: 1.40em;
+    color: rgb(33, 17, 177);
+    padding: 8px 16px;
+    text-decoration:thick;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+  @font-face {
+    font-family: 'digital-7';
+    src: url('../fonts/digital-7.ttf');
+  }
+</style>
+
+
+
+<body>
+    <div class="container">
+        <h1 id="count">10</h1>
+    </div>
+
+    <script>
+
+// This is the script code for the countdown
+var counter = 10;
+setInterval( function StartTheCountdown(){
+counter--;
+
+if (counter >= 0) {
+    id = document.getElementById("count");
+    id.innerHTML = counter;
+}
+
+if (counter === 6){
+id.innerHTML = "WARNING! Half way to launch"
+}
+
+if (counter === 0){
+    id.innerHTML = "BLASTOFF!"
+}
+
+}, 1000);
+
+
+    </script>
+    <audio controls autoplay>
+        <source src="C:\Users\Tim\javascript\Rocket countdown and blastoff.ogg" type="audio/ogg">
+          <source src="C:\Users\Tim\javascript\Rocket countdown and blastoff.wav" type="audio/wav">
+        Your browser does not support the audio element.
+        </audio>
+
+       
+</body>
+
+</HTML>

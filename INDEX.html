@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <!--Tim Schelander-->
+
+    <div id="digit_clock_time"></div>
+    <div id="digit_clock_date"></div>
+  </div>
+<head>
+  <h2 style="color: darkgray;">UAT SPACE PROGRAM</h2>
+  <br>
+  <img src="C:\Users\Tim\Documents\programming\UATspaceLogo.jpg" alt="Trulli" width="200" height="200">
+  <nav>
+    <ul>
+      <li>
+          <a href="C:\Users\Tim\javascript\countdown audio.html">Rocket Countdown</a>
+      </li>
+      <li>
+          <a href="C:\Users\Tim\javascript\boards.html">Major Objectives</a>
+      </li>
+      <li>
+        <a href="C:\Users\Tim\javascript\MISSION CONTROL.html">Space Program</a>
+    </li>
+      <li>
+          <a href="mailto:TIMSCHEL@UAT.EDU">Contact</a>
+      </li>
+      <li>
+        <a href="https://www.uat.edu/">UAT HOMEPAGE</a>
+    </li>
+    </ul>
+  </nav>
+
+<style>
+
+body {
+    background-image: url(https://th.bing.com/th/id/R.f1bbf3ad20e070db25195c2671a1d30c?rik=KsKcgg8GxQtn3Q&riu=http%3a%2f%2f1.bp.blogspot.com%2f-HwInMZAmsSA%2fT78dOBqq8MI%2fAAAAAAAAEHY%2fw0NRtJWVcBA%2fs1600%2fHdhut.blogspot.com%2b%25252832%252529.jpg&ehk=7%2ftCHZ5u7zFHsxQPCiVECU6GxiSV49DJnwOV1C4mPAU%3d&risl=&pid=ImgRaw&r=0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(119, 115, 115);
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+  @font-face {
+    font-family: 'digital-7';
+    src: url('../fonts/digital-7.ttf');
+  }
+  
+  body {
+    color: #ffffff;
+    background-color: #000000;
+    font-family: 'digital-7', sans-serif;
+  }
+
+  /*clock*/
+/* Google font */
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+ 
+#digit_clock_time {
+  font-family: 'Work Sans', sans-serif;
+  color: #66ff99;
+  font-size: 35px;
+  text-align: top-left;
+  padding-top: 20px;
+
+}
+#digit_clock_date {
+  font-family: 'Work Sans', sans-serif;
+  color: #66ff99;
+  font-size: 20px;
+  text-align: top-left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div>      
+
+<script>
+function currentTime() {
+  var date = new Date(); /* creating object of Date class */
+  var hour = date.getHours();
+  var min = date.getMinutes();
+  var sec = date.getSeconds();
+  var midday = "AM";
+  midday = (hour >= 12) ? "PM" : "AM"; /* assigning AM/PM */
+  hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour); /* assigning hour in 12-hour format */
+  hour = changeTime(hour);
+  min = changeTime(min);
+  sec = changeTime(sec);
+  document.getElementById("digit_clock_time").innerText = hour + " : " + min + " : " + sec + " " + midday; /* adding time to the div */
+ 
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+ 
+  var curWeekDay = days[date.getDay()]; // get day
+  var curDay = date.getDate();  // get date
+  var curMonth = months[date.getMonth()]; // get month
+  var curYear = date.getFullYear(); // get year
+  var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear; // get full date
+  document.getElementById("digit_clock_date").innerHTML = date;
+ 
+  var t = setTimeout(currentTime, 1000); /* setting timer */
+}
+ 
+function changeTime(k) { /* appending 0 before time elements if less than 10 */
+  if (k < 10) {
+    return "0" + k;
+  }
+  else {
+    return k;
+  }
+}
+ 
+currentTime();
+
+</script>
+
+</body>
+</html>
